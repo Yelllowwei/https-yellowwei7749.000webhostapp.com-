@@ -1,86 +1,180 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html>
+
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf-8">
 		<title></title>
-		<script type="text/javascript">
-			window.alert("作业不会，问了有些还是不懂不会，我已经尽力了，我的妈耶！")
-			function addRow() {
-				shuru = document.getElementById("myname");
-				tab1 = document.getElementById("hw");
-				rows = tab1.rows.length;
-				x = shuru.value;
-				radio = document.getElementsByClassName("sex");
-				selectvalue = null; 
-				for (i = 0; i < radio.length; i++) {
-					if (radio[i].checked == true) {
-						selectvalue = radio[i].value;
-						break;
-					}
-				}
-				if (x != "" && selectvalue != null) {
-					hwtr = hw.insertRow(); 
-					hwtd0 = hwtr.insertCell();
-					hwtd1 = hwtr.insertCell();
-					hwtd2 = hwtr.insertCell();
-					hwtd3 = hwtr.insertCell(); 
-					hwtd0.innerText = rows;
-					hwtd1.innerText = x;
-					hwtd2.innerText = selectvalue;
-					hwtd3.innerHTML = "<a href='javascript:void(0);' onclick='deleteTable(this);'>删除</a>";
-					hwtd1.addEventListener("mouseover", function() {
-						this.style.color = "red";
-					}); 
-					hwtd1.addEventListener("mouseleave", function() {
-						this.style.color = "black";
-					}); 
-				} 
-			}
 
-			function deleteTable(r) {
-			    i = r.parentNode.parentNode.rowIndex;
-				document.getElementById('hw').deleteRow(i);
+		<style>
+			html,
+			body {
+				padding: 0px;
+				margin: 0px;
+				font-family: 'Raleway', sans-serif;
+				color: #FFF;
+				height: 100%;
+				background: url(img/caoyuan.jpg) ;
+				background-size: 100%;
+				
 			}
-
-			function mouseon(obj) {
-				obj.style.color = "red";
+			
+			body {
+				background: rgba(0, 0, 0, 0.5);
+				background-image: url(img/QQ图片20181127174714.jpg);
 			}
+			
+			.container {
+				max-width: 200px;
+				background: rgba(0, 0, 0, 0.75);
+				margin: 40px 0;
+				padding: 10px 0px 20px 0px;
+				border: 1px solid #111;
+				border-radius: 4px;
+				box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.75);
+			}
+			.div1{
+				height: 251px;
+			}
+			
+			.link {
+				font-size: 16px;
+				font-weight: 300;
+				text-align: center;
+				position: relative;
+				height: 40px;
+				line-height: 40px;
+				margin-top: 10px;
+				overflow: hidden;
+				width: 90%;
+				margin-left: 5%;
+				cursor: pointer;
+			}
+			
+			.link:after {
+				content: '';
+				position: absolute;
+				width: 80%;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+				bottom: 50%;
+				left: -100%;
+				transition-delay: all 0.5s;
+				transition: all 0.5s;
+			}
+			
+			.link:hover:after,
+			.link.hover:after {
+				left: 100%;
+			}
+			
+			.link .text {
+				text-shadow: 0px -40px 0px rgba(255, 255, 255, 1);
+				transition: all 0.75s;
+				transform: translateY(100%) translateZ(0);
+				transition-delay: all 0.25s;
+			}
+			
+			.link:hover .text,
+			.link.hover .text {
+				text-shadow: 0px -40px 0px rgba(255, 255, 255, 0);
+				transform: translateY(0%) translateZ(0) scale(1.1);
+				font-weight: 600;
+			}
+		</style>
+		<script>
+			//For Demo only
+			var links = document.getElementsByClassName('link')
+			for(var i = 0; i <= links.length; i++)
+				addClass(i)
 
-			function mouseoff(obj) {
-				obj.style.color = "black";
+			function addClass(id) {
+				setTimeout(function() {
+					if(id > 0) links[id - 1].classList.remove('hover')
+					links[id].classList.add('hover')
+				}, id * 750)
 			}
 		</script>
-		
 	</head>
-	<body>
-		<p align="center" id="p1" style="display: inline-flex;">
-			姓名 : <input type="text" id="myname">
-			性别 : <td><input type="radio" name="sex" class="sex" value="男" checked="checked" />男</td>
-			<td><input type="radio" name="sex" class="sex" value="女" />女</td>
+
+	<body>、
+		<p>
+			<a>
+				<h1 style="text-align:center;">第九天堂海威山庄设计方案策划书</h1></a>
 		</p>
 
-		<div align="center" style="display: inline-flex;"><input type="button" value="添加" onclick="addRow()"></div>
-		
-		<table  border="1" id="hw" style="width: 50%;border:1px solid red">
-			<tr>
-				<td>序号</td>
-				<td>姓名</td>
-				<td>性别</td>
-				<td>操作</td>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td onmouseover="mouseon(this)" onmouseleave="mouseoff(this)">李相赫</td>
-				<td>男</td>
-				<td><a href='javascript:void(0);' onclick='deleteTable(this);'>删除</a></td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td onmouseover="mouseon(this)" onmouseleave="mouseoff(this)">恩静</td>
-				<td>女</td>
-				<td><a href='javascript:void(0);' onclick='deleteTable(this);'>删除</a></td>
-			</tr>
-		</table>
+		<div class="container">
+			<div class="link">
+				<div class="text"><a href="index91.html">首页</a></div>
+			</div>
+			<div class="link">
+				<div class="text"><a href="index92.html">项目介绍</a></div>
+			</div>
+			<div class="link">
+				<div class="text"><a href="index93.html">山庄产品</a></div>
+			</div>
+			<div class="link">
+				<div class="text"><a href="index94.html">行动理念</a></div>
+			</div>
+			<div class="link">
+				<div class="text"><a href="index95.html">人才招聘</a></div>
+			</div>
+			<div class="link">
+				<div class="text"><a href="index96.html">联系我们</a></div>
+			</div>
+		</div>
+          <div class="div1"></div>
+		<!-- 版权信息 -->
+		<div class="layout qq-footer" bosszone="dibu" bossexpo="bg_dibu" style="text-align: center;">
+			<a target="_blank" rel="nofollow">关于山庄</a> |
+			<a target="_blank" rel="nofollow">About Tencent</a> |
+			<a target="_blank" rel="nofollow">服务协议</a>
+			|
+			<a target="_blank" rel="nofollow">隐私政策</a> |
+			<a  rel="nofollow">开放平台</a>
+			<!--  | <a target="_blank" rel="nofollow">广告服务</a> -->
+			|
+			<a target="_blank" rel="nofollow">商务洽谈</a> |
+			<a  target="_blank" rel="nofollow">山庄招聘</a> |
+			<a  target="_blank" rel="nofollow">山庄公益</a>
+			|
+			<a target="_blank" rel="nofollow">客服中心</a> |
+			<a target="_blank" rel="nofollow">网站导航</a> |
+			<a  rel="nofollow">客户端下载</a>
+			|
+			<a target="_blank" rel="nofollow">版权所有</a><br>
+			<a target="_blank" rel="nofollow">湘潭举报中心</a> |
+			<a target="_blank" rel="nofollow">湘潭公安局</a> |
+			<a  target="_blank" rel="nofollow">抵制违法事业承诺书</a>
+			<!--  | <a class="lchot" target="_blank" rel="nofollow">阳光·绿色网络工程</a> -->
+			|
+			<a target="_blank" rel="nofollow">版权保护投诉指引</a> |
+			<a target="_blank" rel="nofollow">湖南省通管局</a><br>
+			<span><a  target="_blank" rel="nofollow">湘网文[2017]6138-1456号</a> <a 
+          target="_blank" rel="nofollow">新出网证（湘）字010号</a> <a  target="_blank" rel="nofollow">网络视听许可证1904073号</a>
+        增值电信业务经营许可证：<a  target="_blank" rel="nofollow">湘G-maikejieke9896</a> <a 
+          target="_blank" rel="nofollow">B2-20090028</a>
+      </span><br>
+			<a  target="_blank" rel="nofollow">
+				新闻信息服务许可证</a>
+			<a target="_blank" rel="nofollow">湘府新函[2001]87号</a> 违法和不良信息举报电话：0438-438-13787976166
+			<a style="" target="_blank" ><span>湘公网安备
+          44030002000001号</span></a><br>
+			<a  target="_blank">互联网药品信息服务资格证书 （湘）—非营业性—2018-1028</a><br>
+			<span>Copyright  1999 - </span><span id="currentFullYear">2018</span> <span>Tencent. All Rights Reserved</span>
+
+			<script>
+				//For Demo only
+				var links = document.getElementsByClassName('link')
+				for(var i = 0; i <= links.length; i++)
+					addClass(i)
+
+				function addClass(id) {
+					setTimeout(function() {
+						if(id > 0) links[id - 1].classList.remove('hover')
+						links[id].classList.add('hover')
+					}, id * 750)
+				}
+			</script>
+
 	</body>
+
 </html>
